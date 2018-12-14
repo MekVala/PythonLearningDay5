@@ -18,12 +18,13 @@ start = datetime.date(1999, 1, 1)
 end = datetime.date(9999, 12, 31)
 
 try:
-    print("Fetching Data From Employee Table :")
+    print("Fetching Data From Employee Table !")
     cur.execute(q,(start,end))
 except Error as err:
     print("Error Fetching Record: {}".format(str(err)))
     exit()
 else:
+    print("Data :")
     for (first_name, last_name, hire_date) in cur:
         print("{}, {} was hired on {:%d %b %Y}".format(last_name, first_name, hire_date))
 
